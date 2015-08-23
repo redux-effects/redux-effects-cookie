@@ -19,6 +19,7 @@ import {applyMiddleware, createStore} from 'redux'
 
 applyMiddleware(cookie())(createStore)
 ```
+
 Installation (server-side):
 
 ```javascript
