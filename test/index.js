@@ -3,7 +3,7 @@
  */
 
 import test from 'tape'
-import cookie from '..'
+import cookie from '../src'
 
 /**
  * Tests
