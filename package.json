@@ -2,7 +2,7 @@
   "name": "redux-effects-cookie",
   "description": "Access and manipulate cookies in redux-effects middleware",
   "repository": "git://github.com/redux-effects/redux-effects-cookie.git",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
