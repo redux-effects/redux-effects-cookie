@@ -60,7 +60,7 @@ const setAuthToken = createAction('SET_AUTH_TOKEN')
 
 function initializeAuth () {
   return cookie('authToken')
-    .then(setAuthToken)
+    .step(setAuthToken)
 }
 ```
 
