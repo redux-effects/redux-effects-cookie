@@ -40,9 +40,10 @@ Actions should look like this:
 {
   type: 'EFFECT',
   payload: {
-    type: <SET_COOKIE/GET_COOKIE>
-    name: <cookie name>
-    value: <cookie value> // Applicable only to SET_COOKIE
+    type: <SET_COOKIE/GET_COOKIE>,
+    name: <cookie name>,
+    value: <cookie value>, // Applicable only to SET_COOKIE
+    meta: <cookie options> // Applicable only to SET_COOKIE
   }
 }
 ```

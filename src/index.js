@@ -26,7 +26,7 @@ function cookieMiddleware (cookieMap) {
 function handle (cookie, effect) {
   switch (effect.type) {
     case 'SET_COOKIE':
-      return cookie(effect.name, effect.value)
+      return cookie(effect.name, effect.value, effect.meta)
     case 'GET_COOKIE':
       return cookie(effect.name)
   }
