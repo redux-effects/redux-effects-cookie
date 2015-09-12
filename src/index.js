@@ -15,7 +15,7 @@ function cookieMiddleware (cookieMap) {
 
   return ({dispatch, getState}) => next => effect =>
     effect.type === 'GET_COOKIE' || effect.type === 'SET_COOKIE'
-      ? handle(cookie, effect)
+      ? Promise.resolve(handle(cookie, effect))
       : next(effect)
 }
 
