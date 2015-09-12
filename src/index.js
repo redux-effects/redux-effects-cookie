@@ -13,22 +13,24 @@ function cookieMiddleware (cookieMap) {
     ? map(cookieMap)
     : _cookie
 
-  return ({dispatch, getState}) => next => effect =>
-    effect.type === 'GET_COOKIE' || effect.type === 'SET_COOKIE'
-      ? Promise.resolve(handle(cookie, effect))
-      : next(effect)
+  return ({dispatch, getState}) => next => action =>
+    action.type === 'GET_COOKIE' || action.type === 'SET_COOKIE'
+      ? Promise.resolve(handle(cookie, action))
+      : next(action)
 }
 
 /**
  * Handle a cookie effect
  */
 
-function handle (cookie, effect) {
-  switch (effect.type) {
+function handle (cookie, action) {
+  const {name, value, meta} = action.payload
+
+  switch (action.type) {
     case 'SET_COOKIE':
-      return cookie(effect.name, effect.value, effect.meta)
+      return cookie(name, value, meta)
     case 'GET_COOKIE':
-      return cookie(effect.name)
+      return cookie(name)
   }
 }
 
