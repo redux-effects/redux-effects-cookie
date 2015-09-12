@@ -24,11 +24,11 @@ function cookieMiddleware (cookieMap) {
  */
 
 function handle (cookie, action) {
-  const {name, value, meta} = action.payload
+  const {name, value, opts} = action.payload
 
   switch (action.type) {
     case 'SET_COOKIE':
-      return cookie(name, value, meta)
+      return cookie(name, value, opts)
     case 'GET_COOKIE':
       return cookie(name)
   }
