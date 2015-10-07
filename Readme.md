@@ -32,28 +32,10 @@ function storeMiddleware (req, res, next) {
 }
 ```
 
-## Action creators
-
-Actions should look like this:
+## Example
 
 ```javascript
-{
-  type: 'EFFECT',
-  payload: {
-    type: <SET_COOKIE/GET_COOKIE>,
-    name: <cookie name>,
-    value: <cookie value>, // Applicable only to SET_COOKIE
-    meta: <cookie options> // Applicable only to SET_COOKIE
-  }
-}
-```
-
-An action creator for this already exists, [declarative-cookie](https://github.com/redux-effects/declarative-cookie)
-
-## Example (with declarative-cookie)
-
-```javascript
-import cookie from 'declarative-cookie'
+import {cookie} from 'redux-effects-cookie'
 import {createAction} from 'redux-actions'
 
 const setAuthToken = createAction('SET_AUTH_TOKEN')
