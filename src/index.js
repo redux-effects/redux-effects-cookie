@@ -48,7 +48,7 @@ function handle (cookie, action) {
 
 function map (cookieMap) {
   return function (name, value) {
-    if (arguments.length === 2) {
+    if (arguments.length > 1) {
       cookieMap[name] = value
     }
 
