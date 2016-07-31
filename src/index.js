@@ -37,7 +37,7 @@ function handle (cookie, action) {
     case SET_COOKIE:
       return cookie(name, value, opts)
     case GET_COOKIE:
-      return cookie(name)
+      return name ? cookie(name) : cookie()
   }
 }
 
