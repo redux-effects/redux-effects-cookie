@@ -35,14 +35,14 @@ function storeMiddleware (req, res, next) {
 ## Example
 
 ```javascript
+import {bind} from 'redux-effects'
 import {cookie} from 'redux-effects-cookie'
 import {createAction} from 'redux-actions'
 
 const setAuthToken = createAction('SET_AUTH_TOKEN')
 
 function initializeAuth () {
-  return cookie('authToken')
-    .step(setAuthToken)
+  return bind(cookie('authToken'), setAuthToken)
 }
 ```
 
